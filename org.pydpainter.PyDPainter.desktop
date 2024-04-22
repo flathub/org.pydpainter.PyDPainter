@@ -6,3 +6,4 @@ GenericName=pixel art editor
 Comment=Deluxe Paint inspired raster graphics editor
 Icon=org.pydpainter.PyDPainter
 Exec=pydpainter
+Categories=Graphics;2DGraphics;
