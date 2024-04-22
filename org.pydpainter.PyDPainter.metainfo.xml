@@ -3,7 +3,7 @@
   <!--Created with jdAppStreamEdit 7.1-->
   <id>org.pydpainter.PyDPainter</id>
   <name>PyDPainter</name>
-  <summary>A usable pixel art paint program written in Python</summary>
+  <summary>Pixel art paint program</summary>
   <developer_name>Mark Riale</developer_name>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
