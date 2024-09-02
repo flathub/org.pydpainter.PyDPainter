@@ -52,14 +52,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/mriale/PyDPainter.git
-        tag: v1.2.2
-        commit: c0f0d7a26661c0bcaba441ca15c68b3baac75e18
+        tag: v2.0.0
+        commit: ef12cffd5eda3c579c9c7084ab8639f216e32dc1
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-      - type: patch
-        path: cursor.patch
-        use-git: true
       - type: file
         path: run.sh
       - type: file
