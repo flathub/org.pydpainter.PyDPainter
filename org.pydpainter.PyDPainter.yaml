@@ -58,9 +58,6 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-      - type: patch
-        path: cursor.patch
-        use-git: true
       - type: file
         path: run.sh
       - type: file
