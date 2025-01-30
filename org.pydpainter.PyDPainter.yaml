@@ -46,15 +46,15 @@ modules:
     build-commands:
       - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/pydpainter
       - install -Dm 755 PyDPainter.py ${FLATPAK_DEST}/share/pydpainter/PyDPainter.py
-      - cp -a data iff_pics libs logo ${FLATPAK_DEST}/share/pydpainter
+      - cp -a data gif2numpy iff_pics libs logo ${FLATPAK_DEST}/share/pydpainter
       - install -Dm 644 logo128.png ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       - install -Dm 644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm 644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       - type: git
         url: https://github.com/mriale/PyDPainter.git
-        tag: v2.0.1
-        commit: b4bdfede84ecbd523f63f55c484c78bce21ef992
+        tag: v2.1.0
+        commit: 8b502ab1ae5835e7f75a28c774cd1771b1c7767f
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
