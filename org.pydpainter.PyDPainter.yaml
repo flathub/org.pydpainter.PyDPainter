@@ -47,7 +47,7 @@ modules:
       - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/pydpainter
       - install -Dm 755 PyDPainter.py ${FLATPAK_DEST}/share/pydpainter/PyDPainter.py
       - cp -a data gif2numpy iff_pics libs logo ${FLATPAK_DEST}/share/pydpainter
-      - install -Dm 644 logo128.png ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - install -Dm 644 logo128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
       - install -Dm 644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm 644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
