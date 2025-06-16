@@ -1,6 +1,6 @@
 app-id: org.pydpainter.PyDPainter
 runtime: org.freedesktop.Platform
-runtime-version: 23.08
+runtime-version: 24.08
 sdk: org.freedesktop.Sdk
 command: pydpainter
 finish-args:
@@ -16,30 +16,40 @@ modules:
     sources:
       - type: git
         url: https://github.com/PortMidi/portmidi.git
-        tag: v2.0.3
+        tag: v2.0.4
 
-  - name: python3-pygame
+  - name: python3-meson-python
     buildsystem: simple
-    build-options:
     build-commands:
-      - pip3 install --prefix=${FLATPAK_DEST} .
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "meson-python" --no-build-isolation
     sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/c6/aa/2c0c867d6cff00966cfc2152b25f61599f87e88b239e4dcb8ad5357f0f69/pygame-2.5.2.tar.gz
-        sha256: c1b89eb5d539e7ac5cf75513125fb5f2f0a2d918b1fd6e981f23bf0ac1b1c24a
+      - type: file
+        url: https://files.pythonhosted.org/packages/28/58/66db620a8a7ccb32633de9f403fe49f1b63c68ca94e5c340ec5cceeb9821/meson_python-0.18.0-py3-none-any.whl
+        sha256: 3b0fe051551cc238f5febb873247c0949cd60ded556efa130aa57021804868e2
+      - type: file
+        url: https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl
+        sha256: 29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484
+      - type: file
+        url: https://files.pythonhosted.org/packages/7e/b1/8e63033b259e0a4e40dd1ec4a9fee17718016845048b43a36ec67d62e6fe/pyproject_metadata-0.9.1-py3-none-any.whl
+        sha256: ee5efde548c3ed9b75a354fc319d5afd25e9585fa918a34f62f904cc731973ad
+
+  - name: python3-pygame-ce
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "pygame-ce" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/c9/be/af69521e694442dbde5db29069953f25367ddacaa50d9ae644745853d37c/pygame_ce-2.5.5.tar.gz
+        sha256: a7f297c223c6e35f16d65d47a19757005763ea7e90795ccc37c0bc562364ae6b
 
   - name: python3-numpy
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-        --prefix=${FLATPAK_DEST} "numpy" --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "numpy" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/a0/41/8f53eff8e969dd8576ddfb45e7ed315407d27c7518ae49418be8ed532b07/numpy-1.25.2.tar.gz
-        sha256: fd608e19c8d7c55021dffd43bfe5492fab8cc105cc8986f813f8c3c048b38760
-    cleanup:
-      - /bin
-      - /share/man/man1
+        url: https://files.pythonhosted.org/packages/f3/db/8e12381333aea300890829a0a36bfa738cac95475d88982d538725143fd9/numpy-2.3.0.tar.gz
+        sha256: 581f87f9e9e9db2cba2141400e160e9dd644ee248788d6f90636eeb8fd9260a6
 
   - name: pydpainter
     buildsystem: simple
@@ -53,8 +63,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/mriale/PyDPainter.git
-        tag: v2.1.0
-        commit: 8b502ab1ae5835e7f75a28c774cd1771b1c7767f
+        tag: v2.2.0
+        commit: eb3559159d9c7860f3d64e3572566b0abaa56e3e
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
