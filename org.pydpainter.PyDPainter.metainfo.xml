@@ -17,6 +17,9 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="2.2.0" date="2025-06-16">
+      <description></description>
+    </release>
     <release version="2.1.0" date="2025-01-30" type="stable">
       <url>https://github.com/mriale/PyDPainter/releases/tag/v2.1.0</url>
     </release>

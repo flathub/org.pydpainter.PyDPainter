@@ -53,8 +53,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/mriale/PyDPainter.git
-        tag: v2.1.0
-        commit: 8b502ab1ae5835e7f75a28c774cd1771b1c7767f
+        tag: v2.2.0
+        commit: eb3559159d9c7860f3d64e3572566b0abaa56e3e
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
