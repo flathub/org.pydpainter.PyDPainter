@@ -13,10 +13,13 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://github.com/mriale/PyDPainter/raw/v1.2.2/pydpainter-screenshot.png</image>
+      <image type="source">https://github.com/mriale/PyDPainter/raw/v2.2.1/pydpainter-screenshot.png</image>
     </screenshot>
   </screenshots>
   <releases>
+    <release version="2.2.1" date="2026-01-26" type="stable">
+      <url>https://github.com/mriale/PyDPainter/releases/tag/v2.2.1</url>
+    </release>
     <release version="2.2.0" date="2025-06-14" type="stable">
       <url>https://github.com/mriale/PyDPainter/releases/tag/v2.2.0</url>
     </release>
