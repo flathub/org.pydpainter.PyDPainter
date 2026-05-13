@@ -1,6 +1,6 @@
 app-id: org.pydpainter.PyDPainter
 runtime: org.freedesktop.Platform
-runtime-version: 24.08
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: pydpainter
 finish-args:
@@ -9,47 +9,31 @@ finish-args:
   - --device=dri
   - --socket=pulseaudio
   - --filesystem=xdg-pictures
-
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /lib/python3.*/site-packages/pygame/docs
+  - /lib/python3.*/site-packages/pygame/examples
+  - /lib/python3.*/site-packages/pygame/tests
+  - /lib/python3.*/site-packages/numpy/tests/
+  - /lib/python3.*/site-packages/numpy/*/tests/
+  - /man
+  - /share/man
 modules:
+  - shared-modules/SDL2/SDL2_image.json
+  - shared-modules/SDL2/SDL2_ttf.json
+  - tkinter.json
+
   - name: portmidi
     buildsystem: cmake
     sources:
       - type: git
         url: https://github.com/PortMidi/portmidi.git
-        tag: v2.0.4
+        tag: v2.0.8
+        commit: 101dac9455e2718512c94e24cbcae6a6f34b908b
 
-  - name: python3-meson-python
-    buildsystem: simple
-    build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "meson-python" --no-build-isolation
-    sources:
-      - type: file
-        url: https://files.pythonhosted.org/packages/28/58/66db620a8a7ccb32633de9f403fe49f1b63c68ca94e5c340ec5cceeb9821/meson_python-0.18.0-py3-none-any.whl
-        sha256: 3b0fe051551cc238f5febb873247c0949cd60ded556efa130aa57021804868e2
-      - type: file
-        url: https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl
-        sha256: 29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484
-      - type: file
-        url: https://files.pythonhosted.org/packages/7e/b1/8e63033b259e0a4e40dd1ec4a9fee17718016845048b43a36ec67d62e6fe/pyproject_metadata-0.9.1-py3-none-any.whl
-        sha256: ee5efde548c3ed9b75a354fc319d5afd25e9585fa918a34f62f904cc731973ad
-
-  - name: python3-pygame-ce
-    buildsystem: simple
-    build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "pygame-ce" --no-build-isolation
-    sources:
-      - type: file
-        url: https://files.pythonhosted.org/packages/c9/be/af69521e694442dbde5db29069953f25367ddacaa50d9ae644745853d37c/pygame_ce-2.5.5.tar.gz
-        sha256: a7f297c223c6e35f16d65d47a19757005763ea7e90795ccc37c0bc562364ae6b
-
-  - name: python3-numpy
-    buildsystem: simple
-    build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "numpy" --no-build-isolation
-    sources:
-      - type: file
-        url: https://files.pythonhosted.org/packages/f3/db/8e12381333aea300890829a0a36bfa738cac95475d88982d538725143fd9/numpy-2.3.0.tar.gz
-        sha256: 581f87f9e9e9db2cba2141400e160e9dd644ee248788d6f90636eeb8fd9260a6
+  - python3-requirements.yaml
 
   - name: pydpainter
     buildsystem: simple
@@ -57,7 +41,7 @@ modules:
       - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/pydpainter
       - install -Dm 755 PyDPainter.py ${FLATPAK_DEST}/share/pydpainter/PyDPainter.py
       - cp -a data gif2numpy iff_pics libs logo ${FLATPAK_DEST}/share/pydpainter
-      - install -Dm 644 logo128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
+      - install -Dm 644 logo/logo128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
       - install -Dm 644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm 644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
@@ -70,8 +54,6 @@ modules:
           tag-pattern: ^v([\d.]+)$
       - type: file
         path: run.sh
-      - type: file
-        path: logo128.png
       - type: file
         path: org.pydpainter.PyDPainter.metainfo.xml
       - type: file
