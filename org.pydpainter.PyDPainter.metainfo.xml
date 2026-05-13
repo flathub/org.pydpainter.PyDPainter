@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-  <!--Created with jdAppStreamEdit 7.1-->
+<component type="desktop-application">
   <id>org.pydpainter.PyDPainter</id>
-  <name>PyDPainter</name>
-  <summary>Pixel art paint program</summary>
-  <developer_name>Mark Riale</developer_name>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
+  <name>PyDPainter</name>
+  <summary>Pixel art paint program</summary>
+  <url type="homepage">https://pydpainter.org</url>
+  <url type="bugtracker">https://github.com/mriale/PyDPainter/issues</url>
+  <url type="help">https://github.com/mriale/PyDPainter/blob/master/docs/TOC.md</url>
+  <url type="donation">https://ko-fi.com/mriale</url>
+  <url type="vcs-browser">https://github.com/mriale/PyDPainter</url>
+  <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">org.pydpainter.PyDPainter.desktop</launchable>
+  <developer id="org.pydpainter">
+    <name>Mark Riale</name>
+  </developer>
   <description>
-    <p>PyDPainter, pronounced "Pied Painter" (like Pied Piper), is an attempt to create a usable pixel art program in Python using PyGame. The original inspiration came from the Commodore Amiga version of Deluxe Paint released by Electronic Arts in 1985. Back then, Deluxe Paint helped define the user interface of a paint program with tool bars, menus, and the novel use of left and right mouse buttons for painting and erasing. After pixel art gave way to photo-realism and high-resolution 24 bit color, Deluxe Paint was largely forgotten for artistic work -- left behind in the ever-progressing march of technology.</p>
-    <p>Recently, with a resurgence of all things "retro," low-resolution pixel art and limited color palettes have become popular once again. Many tools to deal with this medium are either too complicated or too crude. This project is an attempt to bring back an old but reliable tool and enhance it with some features to help it better coexist in the modern world.</p>
+    <p>PyDPainter, pronounced "Pied Painter" (like Pied Piper), is an attempt to create a usable pixel art program
+      in Python using PyGame. The original inspiration came from the Commodore Amiga version of Deluxe Paint
+      released by Electronic Arts in 1985. Back then, Deluxe Paint helped define the user interface of a paint program
+      with tool bars, menus, and the novel use of left and right mouse buttons for painting and erasing. After pixel art
+      gave way to photo-realism and high-resolution 24 bit color, Deluxe Paint was largely forgotten for artistic work --
+      left behind in the ever-progressing march of technology.</p>
+    <p>Recently, with a resurgence of all things "retro," low-resolution pixel art and limited color palettes have become
+      popular once again. Many tools to deal with this medium are either too complicated or too crude. This project is
+      an attempt to bring back an old but reliable tool and enhance it with some features to help it better coexist
+      in the modern world.</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -78,11 +94,4 @@
       <url>https://github.com/mriale/PyDPainter/releases/tag/v1.0.1</url>
     </release>
   </releases>
-  <url type="homepage">https://pydpainter.org/</url>
-  <url type="bugtracker">https://github.com/mriale/PyDPainter/issues</url>
-  <url type="help">https://github.com/mriale/PyDPainter/blob/master/docs/TOC.md</url>
-  <url type="donation">https://ko-fi.com/mriale</url>
-  <url type="vcs-browser">https://github.com/mriale/PyDPainter</url>
-  <content_rating type="oars-1.1"/>
-  <launchable type="desktop-id">org.pydpainter.PyDPainter.desktop</launchable>
 </component>
